@@ -39,20 +39,37 @@ Model Arena is a full-stack web application that allows users to compare respons
 model-arena/
 │
 ├── backend/
-│ ├── app.js
-│ ├── routes/
-│ │ ├── compare.js
-│ │ └── rate.js
-│ ├── models/
-│ │ └── Rating.js
-│ └── package.json
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── limiter.py
+│   │   ├── schemas.py
+│   │   ├── services/
+│   │   │   └── openrouter.py
+│   │   └── routes/
+│   │       ├── compare.py
+│   │       ├── vote.py
+│   │       └── history.py
+│   │
+│   ├── requirements.txt
+│   └── .env.example
 │
 ├── frontend/
-│ ├── src/
-│ ├── public/
-│ └── package.json
+│   ├── app/
+│   │   ├── page.tsx
+│   │   ├── layout.tsx
+│   │   └── globals.css
+│   │
+│   ├── components/
+│   │   ├── PromptInput.tsx
+│   │   ├── ResponseCard.tsx
+│   │   ├── VoteButtons.tsx
+│   │   └── Loader.tsx
+│   │
+│   └── package.json
 │
 └── README.md
+
 
 ---
 
@@ -73,7 +90,8 @@ OPENAI_API_KEY=your_api_key
 
 
 Start the backend:
-npm start
+uvicorn app.main:app --reload
+
 
 
 Backend runs on:
