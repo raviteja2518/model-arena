@@ -121,6 +121,10 @@ http://localhost:5173
 - Support for additional LLM providers
 
 ---
+Note:- ### Mock Mode
+If `OPENROUTER_API_KEY` is not set, the application runs in mock mode.
+This allows reviewers to explore the UI, model comparison flow,
+and voting system without external dependencies.
 
 ## 👨‍💻 Author
 
